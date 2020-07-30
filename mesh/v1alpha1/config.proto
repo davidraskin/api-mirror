@@ -164,6 +164,9 @@ message MeshConfig {
   // Empty value results in proxy's default access log format
   string access_log_format = 24;
 
+  // Flag will force envoy gRPC or file access logs to be filtered based on Audit Authroization Policy
+  bool enable_access_log_audit = 54;
+
   enum AccessLogEncoding {
     TEXT = 0;
     JSON = 1;
@@ -489,7 +492,7 @@ message MeshConfig {
   reserved "termination_drain_duration";
 
   // $hide_from_docs
-  // Next available field number: 54
+  // Next available field number: 55
 }
 
 // Resource describes the source of configuration
